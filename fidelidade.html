@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Fidelidade</title>
+</head>
+<body>
+   <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <img src="src/images/logo.png"
+                 alt="logo" 
+                 class="logo">
+            <span class="site-title">Raízes do Nordeste</span>
+
+            <button class="btn-mobile"><i class="bi bi-list"></i></button>
+
+            <ul class="list-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="#">Contatos</a></li>
+                 <li><a href="fidelidade.html">Clube Raízes</a></li>
+                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <li><a href="#" ><i class="bi bi-whatsapp"></i></a></li> 
+                <li><a href="#"><i class="bi bi-bag"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="container">
+    <h2>Clube Raízes — Programa de Fidelidade</h2>
+
+        <!-- CADASTRO-->
+      
+    <section class="card-fidelidade">
+        <h3>Já tenho cadastro (Entrar)</h3>
+    
+        <label for="login-cpf">CPF ou Telefone:</label>
+        <input type="text" id="login-cpf" placeholder="Digite seu CPF ou telefone">
+
+        <label for="login-senha">Senha:</label>
+        <input type="password" id="login-senha" placeholder="Digite sua senha">
+
+        <button onclick="fazerLogin()">Entrar</button>
+    </section>
+
+    <!--Novo Cadastro -->
+    <section class="card-fidelidade">
+        <h3>Quero me cadastrar</h3>
+    
+        <label for="cad-nome">Nome Completo:</label>
+        <input type="text" id="cad-nome" placeholder="Seu nome">
+
+        <label for="cad-cpf">CPF ou Telefone:</label>
+        <input type="text" id="cad-cpf" placeholder="Ex: (81) 99999-9999">
+
+        <label for="cad-senha">Crie uma Senha:</label>
+        <input type="password" id="cad-senha" placeholder="Mínimo 4 números">
+
+       <!-- Consentimento LGPD -->
+        <p class="aviso-lgpd">
+            <input type="checkbox" id="lgpd-cadastro">
+            <label for="lgpd-cadastro">Concordo com o cadastro dos meus dados no programa de pontos, conforme a Política de Privacidade.</label>
+        </p>
+
+        <button onclick="fazerCadastro()">Criar Conta</button>
+    </section>
+
+    <!--  Painel de Pontos e Recompensas  -->
+    <section id="painel-pontos" class="card-fidelidade" style="display: none;">
+        <h3>Olá, <span id="usuario-logado">Cliente</span>!</h3>
+        <p>Você tem: <strong id="saldo-pontos">150</strong> pontos</p>
+
+        <h4>Troque seus pontos:</h4>
+        <div class="recompensa-item">
+            <p>1x Suco Natural (Cajá ou Acerola) — <strong>100 pontos</strong></p>
+            <button onclick="resgatarPremio(100, 'Suco Natural')">Resgatar</button>
+        </div>
+    </section>
+    </main>
+   
+    <footer id="contatos" class="rodape">
+       <div class="rodape-info">
+          <h3>Raizes do Nordeste</h3>
+          <p>Unidade Centro | Unidade Shopping | Unidade Zona Sul</p>
+          <p>Atendimento todos os dias das 06h30 às 22h00</p>
+      </div>
+          <p class="copyright">©2026 Raizes do Nordeste - Projeto Académico ADS</p>
+    </footer>
+    <script src="src/js/script.js"></script>
+</body>
+</html>

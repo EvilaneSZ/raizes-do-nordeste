@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Cardápio</title>
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <img src="src/images/logo.png"
+                 alt="logo" 
+                 class="logo">
+            <span class="site-title">Raízes do Nordeste</span>
+
+            <button class="btn-mobile"><i class="bi bi-list"></i></button>
+
+            <ul class="list-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="#">Contatos</a></li>
+                 <li><a href="fidelidade.html">Clube Raízes</a></li>
+                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <li><a href="#" ><i class="bi bi-whatsapp"></i></a></li> 
+                <li><a href="#"><i class="bi bi-bag"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="container">
+    <!-- Escolha da Unidade -->
+    <section class="filtro-unidade">
+        <h2>Nosso Cardápio</h2>
+        <label for="unidade">Selecione a loja:</label>
+        <select id="unidade" onchange="filtrarCardapio()">
+            <option value="todas">Todas as Unidades</option>
+            <option value="centro">Unidade Centro</option>
+            <option value="shopping">Unidade Shopping</option>
+            <option value="Zona Sul">Unidade Zona Sul</option>
+        </select>
+    </section>
+
+    <!--  Lista de Pratos -->
+    <section class="cardapio-grid">
+        <div class="prato-card" data-unidade="centro">
+            <h3>Cuscuz Recheado</h3>
+            <p>Cuscuz de milho com carne de sol e queijo coalho.</p>
+            <span>R$ 18,00</span>
+            <button onclick="adicionarPedido('Cuscuz Recheado', 18)">Adicionar</button>
+        </div>
+
+        <div class="prato-card" data-unidade="shopping">
+            <h3>Tapioca Nordestina</h3>
+            <p>Tapioca com coco e leite condensado.</p>
+            <span>R$ 14,00</span>
+            <button onclick="adicionarPedido('Tapioca Nordestina', 14)">Adicionar</button>
+        </div>
+
+         <div class="prato-card" data-unidade="shopping">
+            <h3>Pastel de Carne</h3>
+            <p>Pastel de Carne Seca.</p>
+            <span>R$ 14,00</span>
+            <button onclick="adicionarPedido('Pastel de Carne', 14)">Adicionar</button>
+        </div>
+
+         <div class="prato-card" data-unidade="zona sul">
+            <h3>Tapioca Molhada</h3>
+            <p>Tapioca com Leite de Coco.</p>
+            <span>R$ 15,00</span>
+            <button onclick="adicionarPedido('Tapioca Nordestina', 15)">Adicionar</button>
+        </div>
+
+         <div class="prato-card" data-unidade="zona sul">
+            <h3>Pão de Queijo</h3>
+            <p>Pão de queijo com bacon</p>
+            <span>R$ 20,00</span>
+            <button onclick="adicionarPedido('Pão de Queijo', 20)">Adicionar</button>
+        </div>
+
+        <div class="prato-card" data-unidade="zona sul">
+            <h3>Suco de Cajá</h3>
+            <p>Suco da fruta Cajá</p>
+            <span>R$ 10,00</span>
+            <button onclick="adicionarPedido('Pão de Queijo', 10)">Adicionar</button>
+        </div>
+
+        <div class="prato-card" data-unidade="zona sul">
+            <h3>Café com Leite</h3>
+            <p>Café com Leite</p>
+            <span>R$ 7,00</span>
+            <button onclick="adicionarPedido('Pão de Queijo', 20)">Adicionar</button>
+        </div>
+    </section>
+
+    <!-- Resumo do Pedido -->
+    <section class="resumo-pedido">
+    <h3>Seu Pedido</h3>
+    <p>Itens selecionados: <span id="qtd-itens">0</span></p>
+    <p>Total: R$ <span id="valor-total">0.00</span></p>
+    
+    
+    <p class="aviso-lgpd">
+        <input type="checkbox" id="aceite-lgpd">
+        <label for="aceite-lgpd">Concordo com o uso dos meus dados para preparo e retirada do pedido.</label>
+    </p>
+
+    <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    </section>
+
+</main>
+
+ <!-- RODAPÉ/CONTATOS -->
+<footer id="contatos" class="rodape">
+      <div class="rodape-info">
+        <h3>Raizes do Nordeste</h3>
+        <p>Unidade Centro | Unidade Shopping | Unidade Zona Sul</p>
+        <p>Atendimento todos os dias das 06h30 às 22h00</p>
+      </div>
+      <p class="copyright">©2026 Raizes do Nordeste - Projeto Académico ADS</p>
+</footer>
+
+<script src="src/js/script.js"></script>
+</body>
+</html>
