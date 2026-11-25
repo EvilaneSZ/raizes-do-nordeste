@@ -8,14 +8,39 @@
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fffaf0;
+}
+
+#container {
+    flex: 1;
+    width: 100%;
+    padding: 25px 5%;
+
+    #container h2 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        color: #3b1d14;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/*CABEÇALHO E MENU*/
+
 .logo{
     width: 90px;
     height: 90px;
     border-radius: 50%;
     transition: 0.3s;
-
-    
+    flex-shrink: 0;
+    object-fit: cover;   
 }
+
 header{
     background-color: rgb(252, 230, 171);
     padding: 8px 4%;
@@ -92,6 +117,7 @@ header{
     
 }
 
+/*PAGINA INICIAL E SOBRE NÓS*/
 #home{
     display: flex;
     flex-direction: column;
@@ -158,29 +184,22 @@ header{
 
     }
 
-    /*Seçao sobre Nós e Canais*/
+    
 
     .secao-sobre{
         padding: 50px 5%;
         background-color: #ffffff;
         text-align: center;
+        margin-top: 20PX;
+        border-radius: 12PX;
     }
 
-    .secao-sobre h2{
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 2rem;
-        color: #3b1d14;
-        margin-bottom: 10px;
-    }
 
     .subtitulo-sobre{
-        font-family: Arial, Helvetica, sans-serif;
-        color: #5c3a2e;
         max-width: 650px;
         margin: 0 auto 35px auto;
-        line-height: 1.5;
     }
-   /* Cartões dos Canais ( Flexbox responsivo*/
+   
     .canais-grid{
         display: flex;
         flex-wrap: wrap;
@@ -274,78 +293,121 @@ header{
 
    /* DO CARDÁPIO E FIDELIDADE - MOBILE-FIRST*/
 
- 
+   
+    .filtro-unidade{
+        max-width: 600px;
+        margin: 0 auto 25px auto;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #5c3a2e;
+    }
     .cardapio-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    margin: 20px 0;
+    max-width: 1100px;
+    margin:0 auto 30px auto;
    }
 
-  /* Cartões de prato, resumo do pedido e formulários de fidelidade */
+  /* Cartões de prato, resumo do pedido e formulários */
    .prato-card,
    .resumo-pedido,
    .card-fidelidade {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
+    background-color: rgb(252, 230, 171);
+    border: 1px solid rgb(59, 29, 20, 0.15);
+    border-radius: 12px;
+    padding: 22px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(59, 29, 20, 0.8);
+    transition: 0.3s;
    }
 
    /* Preço em destaque no cardápio */
-   .prato-card span {
-    display: block;
+   .prato-card span p,
+   .resumo-pedido p,
+   .card-fidelidade label {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.2rem;
-    margin: 10px 0;
-   }
+    font-size: 0.95rem;
+    color: rgb#5c3a2e;
+    margin: 12px 0;
+    line-height: 1.5;
 
-  /* Campos de digitação e seleção (Fidelidade e Filtro) */
+    .prato-card span {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: rgb(222, 55, 4);
+        margin: 12px 0;
+    }
+   }
+   
+   .resumo-pedido,
+   .card-fidelidade {
+       max-width: 600px;
+       margin: 0 auto 25px auto;
+   }
+  
+  /* Campos de digitação e seleção  */
+
    .filtro-unidade select,
    .card-fidelidade input[type="text"],
    .card-fidelidade input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0 15px 0;
+    padding: 10px 12px;
+    margin: 6px 0 15px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box; 
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3b1d14;
    }
 
 
    .aviso-lgpd {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin: 15px 0;
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 10px;
+
+    .aviso-lgpd input[type="checkbox"]{
+        margin-top: 4px;
+        accent-color: #3b1d14;
+    }
    }
 
-  /* Botões padrão das telas internas */
+  /* Botões das telas internas */
+
    .prato-card button,
    .resumo-pedido button,
    .card-fidelidade button {
     width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
+    padding: 10px 22px;
+    background-color: #3b1d14;
+    color: #fffaf0;
+    border: 2px solid #3b1d14;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
     cursor: pointer;
     font-weight: bold;
-    background-color: #d96b27; /* Dica: troque pelo código da cor principal do seu site! */
-    color: #ffffff;
+    background-color: #d96b27; 
+    transition: 0.3s;
 }
 
    .prato-card button:hover,
    .resumo-pedido button:hover,
    .card-fidelidade button:hover {
-    opacity: 0.9;
+    background-color: rgb(222, 55, 4);
+    border-color: rgb(222, 55, 4);
 }
 
    /*ADAPTAÇÃO PARA COMPUTADOR / TABLET */
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
    
     .cardapio-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -356,6 +418,6 @@ header{
     .resumo-pedido button,
     .card-fidelidade button {
         width: auto;
-        padding: 10px 25px;
+    
     }
 }
