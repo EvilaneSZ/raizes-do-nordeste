@@ -103,7 +103,10 @@ function finalizarPedido() {
         alert("Por favor, marque a caixa de privacidade para continuar.");
     } else {
         alert("Pedido enviado para pagamento externo! Total: R$ " + total.toFixed(2));
+        document.getElementById("status-pedido").style.display = "block";
+        document.getElementById("texto-status").innerText = "👨‍🍳 Pagamento aprovado! Seu pedido está em preparo na cozinha.";
     }
+
 }
 
 

@@ -44,6 +44,13 @@
         </select>
     </section>
 
+        <!-- Banner de Promoção -->
+    <section class="resumo-pedido">
+        <h3>🔥 Promoção do Dia</h3>
+        <p>Combo Nordestino: Cuscuz Recheado + Café com Leite por apenas <strong>R$ 20,00</strong>!</p>
+        <button onclick="adicionarPedido('Combo Promoção (Cuscuz + Café)', 20)">Adicionar Combo</button>
+    </section>
+
     <!--  Lista de Pratos -->
     <section class="cardapio-grid">
         <div class="prato-card" data-unidade="centro">
@@ -111,11 +118,16 @@
     </section>
 
     <!-- Resumo do Pedido -->
-    <section class="resumo-pedido">
+    <section id="resumo" class="resumo-pedido">
     <h3>Seu Pedido</h3>
     <p>Itens selecionados: <span id="qtd-itens">0</span></p>
     <p>Total: R$ <span id="valor-total">0.00</span></p>
-    
+     <label for="forma-pagamento">Forma de pagamento (Parceiro Externo):</label>
+    <select id="forma-pagamento" class="campo-pagamento">
+        <option value="pix">Pix (Aprovação imediata)</option>
+        <option value="cartao">Cartão de Crédito / Débito</option>
+    </select>
+
     
     <p class="aviso-lgpd">
         <input type="checkbox" id="aceite-lgpd">
@@ -123,6 +135,13 @@
     </p>
 
     <button onclick="finalizarPedido()">Finalizar Pedido</button>
+
+        <!-- Status do Pedido -->
+    <div id="status-pedido" style="display: none; margin-top: 20px; border-top: 1px solid #3b1d14; padding-top: 15px;">
+        <h4>Acompanhamento do Pedido #104</h4>
+        <p id="texto-status">🟡 Aguardando confirmação de pagamento...</p>
+    </div>
+
     </section>
 
 </main>
